@@ -1,5 +1,10 @@
 # Synthetic Music Detection
 
+**Authors:**
+- Ayaan Khan
+- Minahil Ali
+- Atif Ibrahim Abbasi
+
 A deep learning system for detecting AI-generated music using hybrid feature fusion with attention mechanisms. This project compares multiple approaches including CNNs, autoencoders, transformers, and an advanced hybrid model to classify music as human-composed or AI-generated.
 
 ## Project Overview
