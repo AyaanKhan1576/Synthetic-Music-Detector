@@ -54,11 +54,13 @@ This project addresses the challenge of distinguishing between human-composed an
 
 ### Model Architecture Diagram
 
+![Architecture Diagram](Results/synthetic_music_detection_architecture.png)
+
 ```
 Input Audio (WAV)
-       ↓
+   ↓
 Mel-Spectrogram (128 x Time)
-       ↓
+   ↓
     ┌──────────────────────────┐
     │                          │
     ↓                          ↓
@@ -73,9 +75,9 @@ CNN Baseline         Multi-Task Autoencoder + AST Transformer
     │                    Hybrid Classifier (768-dim)
     │                              ↓
     └──────────────────────────────┘
-                   ↓
-         Binary Classification
-         (AI vs Human)
+           ↓
+     Binary Classification
+     (AI vs Human)
 ```
 
 ## Setup Instructions
@@ -190,15 +192,6 @@ Synthetic-Music-Detector/
 
 4. **Multi-Task Benefits**: Training the autoencoder with dual objectives (reconstruction + classification) creates more discriminative latents than reconstruction alone.
 
-## Prompt Engineering
-
-This project was developed with AI assistance using structured prompt engineering. See `prompts.txt` for detailed prompts demonstrating:
-- Role assignment and context setting
-- Structured requirements and constraints
-- Iterative refinement techniques
-- Technical precision and domain expertise
-- Error handling and edge cases
-
 ## Project Structure
 
 ```
@@ -244,23 +237,6 @@ Synthetic-Music-Detector/
 - Input: 256-dim (AE) + 512-dim (Transformer)
 - Output: 768-dim attended features
 - Classifier: 768→512→256→128→2
-
-## Troubleshooting
-
-### CUDA Out of Memory
-- Reduce batch size in configuration
-- Use gradient accumulation
-- Process embeddings in smaller batches
-
-### AST Import Failures
-- Ensure torchaudio version matches PyTorch
-- Restart kernel after installing dependencies
-- Check CUDA compatibility
-
-### Data Leakage Prevention
-- Group-aware splitting is implemented automatically
-- Files from the same song stay in the same split
-- Verified through group ID tracking
 
 ## References
 
